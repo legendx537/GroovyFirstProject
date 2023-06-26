@@ -5,3 +5,109 @@ Here we have created a Groovy Script :-
 and executed the same.
 
 =======================================================================
+
+Data Types in groovy :-
+
+1. def :-
+
+In Groovy, the def keyword is used to declare a variable without explicitly specifying its data type.
+When you use def, Groovy infers the data type of the variable based on the value assigned to it.
+This feature is known as "type inference" and allows for dynamic typing in Groovy.
+
+Here's an example of using def in Groovy:
+
+def message = "Hello, world!" // Infers the data type as String
+def count = 10 // Infers the data type as int
+def pi = 3.14 // Infers the data type as double
+
+// Assigning a new value of a different type
+message = 42 // Now, the data type is inferred as int
+
+// Using the inferred types
+println(message)
+println(count)
+println(pi)
+
+In the above code, the def keyword is used to declare the variables message, count, and pi.
+The data types of these variables are inferred based on the values assigned to them.
+Initially, message is inferred as String, count as int, and pi as double.
+However, when a new value of a different type is assigned to message, its data type is inferred as int instead.
+
+Using def provides flexibility in writing code without explicitly stating the data types.
+It allows you to focus more on the logic of your program rather than worrying about the specific types.
+However, keep in mind that dynamic typing can also introduce potential runtime errors if variable types are not handled correctly.
+
+It's important to note that while def allows for dynamic typing, you can still choose to explicitly declare variables with specific data types if needed.
+
+==========================================================================================================================================================
+
+String :-
+
+string with double quote("") are special string in which we can use
+placeHolder and expression inside the string.
+
+In Groovy, the String data type represents a sequence of characters.
+It is commonly used to store and manipulate textual data.
+Strings in Groovy are enclosed in double quotes (") or single quotes (').
+
+Here are some examples of working with strings in Groovy:
+
+def message = "Hello, Groovy!" // Using double quotes
+def name = 'John' // Using single quotes
+
+// String concatenation
+def fullName = name + " Doe"
+println(fullName) // Output: John Doe
+
+// String interpolation
+def age = 25
+println("My name is $name and I am $age years old.") // Output: My name is John and I am 25 years old.
+
+// String methods
+def text = "This is a sample text."
+println(text.length()) // Output: 21
+println(text.toUpperCase()) // Output: THIS IS A SAMPLE TEXT.
+println(text.substring(5, 10)) // Output: is a
+
+// String comparison
+def str1 = "apple"
+def str2 = "Apple"
+def str3 = "apple"
+
+println(str1 == str2) // Output: false
+println(str1.equalsIgnoreCase(str2)) // Output: true
+println(str1 == str3) // Output: true
+
+// String interpolation with expressions
+def x = 5
+def y = 10
+println("The sum of $x and $y is ${x + y}.") // Output: The sum of 5 and 10 is 15.
+
+In the above examples, you can see how strings can be declared, concatenated using the + operator, and interpolated using the $ symbol.
+Groovy provides various methods for string manipulation, such as length(), toUpperCase(), and substring(), among others.
+Additionally, string comparison can be performed using the == operator, and case-insensitive comparison can be done with equalsIgnoreCase().
+
+We can write String in multiple lines with the help of :-
+'''
+write multi-lines comment here.
+'''
+
+Example :-
+s='''
+The three line declaration of string is used to
+define string in multiple lines
+In this way we can avoid using "backslash n" at the end of each line
+and write ,multiple lines of comment easily
+'''
+==========================================================================================================================================================
+
+Regular Expression :- we can validate our anything with the help of regular expression.
+
+Example :-
+emailPattern = /[a-z0-9]+@[a-z]+\.[a-z]{2,3}/
+println "test@gmail.com" ==~ emailPattern
+
+Point to note emailPattern is still a String.
+As soon as we use the operator ==~ , the String becomes a pattern
+
+==========================================================================================================================================================
