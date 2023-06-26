@@ -33,3 +33,30 @@ l.reverseEach { println it }
 
 // To calculate each permutation
 l.eachPermutation { println it}
+
+// Moving On to Set
+// By default it uses LinkedHashSet
+s=['java','js','python'] as Set
+println s
+println s.class
+
+// Moving on to Map
+// By default it uses LinkedHashMap
+m=[courseName:'Gradle',rating:'4',price:'10']
+println m
+println m.getClass()
+
+// we can have closures on map
+m.each {k,v ->
+    println k
+    println v
+}
+
+// To access the value in the map
+println m.courseName
+println m['courseName']
+println m.get('courseName')
+
+// we can add key values to the map
+m.review='Its decent'
+println(m.review)
