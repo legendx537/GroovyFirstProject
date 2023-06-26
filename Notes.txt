@@ -111,3 +111,67 @@ Point to note emailPattern is still a String.
 As soon as we use the operator ==~ , the String becomes a pattern
 
 ==========================================================================================================================================================
+
+Closure in Groovy :-
+
+In Groovy, a closure is a block of code that can be assigned to a variable, passed as an argument to a method, or returned as a value from a method.
+Closures are similar to anonymous functions or lambdas in other programming languages.
+They provide a way to encapsulate behavior and create reusable blocks of code.
+
+Here's an example that demonstrates the usage of closures in Groovy:
+
+def addNumbers = { x, y ->
+    x + y
+}
+
+def multiplyNumbers = { x, y ->
+    x * y
+}
+
+// Calling closures
+def sum = addNumbers(5, 3)
+println("Sum: $sum") // Output: Sum: 8
+
+def product = multiplyNumbers(2, 4)
+println("Product: $product") // Output: Product: 8
+
+// Passing closures as arguments
+def calculate = { operation, x, y ->
+    operation(x, y)
+}
+
+def result1 = calculate(addNumbers, 10, 20)
+println("Result 1: $result1") // Output: Result 1: 30
+
+def result2 = calculate(multiplyNumbers, 3, 5)
+println("Result 2: $result2") // Output: Result 2: 15
+
+// Returning closures from a method
+def createIncrementer = { incrementBy ->
+    { number ->
+        number + incrementBy
+    }
+}
+
+def incrementByTwo = createIncrementer(2)
+def incrementedValue = incrementByTwo(5)
+println("Incremented value: $incrementedValue") // Output: Incremented value: 7
+
+In the above code, we define two closures: addNumbers and multiplyNumbers.
+These closures take two parameters, perform the specified operations, and return the result.
+We can then call these closures as regular functions.
+
+Closures can also be passed as arguments to other functions.
+In the calculate closure, we pass either addNumbers or multiplyNumbers as the operation parameter.
+This allows the calculate closure to dynamically perform the specified operation on the provided numbers.
+
+Furthermore, closures can be returned from methods.
+In the createIncrementer closure, we define an inner closure that increments a given number by the specified incrementBy value.
+The outer closure returns this inner closure, effectively creating a closure factory that generates closures with different increment values.
+We assign the returned closure to incrementByTwo and use it to increment a number.
+
+Closures in Groovy provide powerful capabilities for creating flexible and reusable blocks of code.
+They can capture and access variables from their surrounding scope, allowing for rich and expressive behavior.
+
+==========================================================================================================================================================
+
