@@ -1,0 +1,7 @@
+Learning the Groovy Basic :-
+
+First Thing :-
+Here we have created a Groovy Script :-
+and executed the same.
+
+=======================================================================
